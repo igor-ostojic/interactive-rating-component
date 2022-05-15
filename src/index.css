@@ -1,13 +1,192 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+}
+
+:root {
+  --Orange: hsl(25, 97%, 53%);
+  --White: hsl(0, 0%, 100%);
+  --LightGrey: hsl(217, 12%, 63%);
+  --MediumGrey: hsl(216, 12%, 54%);
+  --DarkBlue: hsl(213, 19%, 18%);
+  --VeryDarkBlue: hsl(216, 12%, 8%);
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--VeryDarkBlue);
+  display: grid;
+  place-items: center;
+}
+
+.App {
+  background-color: var(--DarkBlue);
+  max-width: 400px;
+  border-radius: 25px;
+  padding: 2rem;
+}
+
+.first-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.star-container {
+  background-color: hsl(214, 19%, 24%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 2rem;
+}
+
+.big-text {
+  color: var(--White);
+  font-weight: 700;
+  font-size: 1.85rem;
+  margin-bottom: 1rem;
+}
+
+.small-text {
+  color: var(--LightGrey);
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.rating-button {
+  background-color: hsl(214, 19%, 24%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: none;
+  color: var(--LightGrey);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  transition: all 0.2s ease;
+}
+
+.button-container button:hover {
+  cursor: pointer;
+  background-color: var(--MediumGrey);
+  color: var(--White);
+}
+
+.selected-button {
+  background-color: var(--Orange);
+  color: var(--White);
+}
+
+.submit {
+  background-color: var(--Orange);
+  color: var(--White);
+  border: none;
+  height: 45px;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-weight: 700;
+  border-radius: 500px;
+  transition: all 0.2s ease;
+}
+
+.submit:hover {
+  cursor: pointer;
+  background-color: var(--White);
+  color: var(--Orange);
+}
+
+/* -------Thank You Component-------  */
+
+.ThankYou {
+  background-color: var(--DarkBlue);
+  max-width: 400px;
+  border-radius: 25px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.phone {
+  max-width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.selected {
+  background-color: hsl(214, 19%, 24%);
+  padding: 0.4rem 1.25rem;
+  color: var(--Orange);
+  border-radius: 500px;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.thankYouText {
+  color: var(--White);
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.thankYouParagraph {
+  color: var(--LightGrey);
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
+}
+
+@media only screen and (max-width: 470px) {
+  body {
+    padding: 0 1.5rem;
+    font-size: 14px;
+  }
+
+  .App {
+    padding: 1.5rem;
+  }
+
+  .rating-button {
+    background-color: hsl(214, 19%, 24%);
+    width: 45px;
+    height: 45px;
+    font-size: 1.05rem;
+  }
+
+  .star-container {
+    width: 45px;
+    height: 45px;
+  }
 }
